@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giriş / Kayıt • Mini Site</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="kap">
+    <section class="kart">
+      <h1 class="baslik">Mini Site</h1>
+      <p class="aciklama">Giriş yapın veya kayıt olun.</p>
+
+      <div class="sekme">
+        <button class="sekme-dugme aktif" data-target="#giris">Giriş</button>
+        <button class="sekme-dugme" data-target="#kayit">Kayıt Ol</button>
+      </div>
+
+      <div id="giris" class="icerik aktif">
+        <form id="formGiris" class="form">
+          <label>E‑posta
+            <input type="email" name="email" placeholder="ornek@mail.com" required>
+          </label>
+          <label>Şifre
+            <input type="password" name="password" placeholder="••••••••" minlength="6" required>
+          </label>
+          <button class="btn">Giriş Yap</button>
+        </form>
+      </div>
+
+      <div id="kayit" class="icerik">
+        <form id="formKayit" class="form">
+          <label>Ad Soyad
+            <input type="text" name="name" placeholder="Adınız" required>
+          </label>
+          <label>E‑posta
+            <input type="email" name="email" placeholder="ornek@mail.com" required>
+          </label>
+          <label>Şifre
+            <input type="password" name="password" placeholder="En az 6 karakter" minlength="6" required>
+          </label>
+          <button class="btn">Kayıt Ol</button>
+        </form>
+      </div>
+
+      <p class="mini">Demo hesap: <code>admin@gmail.com</code> / <code>123456</code> (önce kayıt edin)</p>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

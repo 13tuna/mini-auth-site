@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="ust">
+    <div class="logo">Mini Site</div>
+    <div class="sag">
+      <span id="kullanici"></span>
+      <button id="cikisBtn" class="btn mini">Çıkış</button>
+    </div>
+  </nav>
+
+  <main class="icerik-alani">
+    <h2>Hoş geldin 👋</h2>
+    <p>Bu sayfa yalnızca giriş yapan kullanıcılar içindir.</p>
+  </main>
+
+  <script>
+    async function me() {
+      const r = await fetch('/api/me', { credentials: 'include' });
+      if (!r.ok) {
+        location.href = '/';
+        return;
+      }
+      const data = await r.json();
+      document.getElementById('kullanici').textContent = data.user.name + ' (' + data.user.email + ')';
+    }
+    me();
+
+    document.getElementById('cikisBtn').addEventListener('click', async () => {
+      try {
+        await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+        location.href = '/';
+      } catch(e) {}
+    });
+  </script>
+</body>
+</html>

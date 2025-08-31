@@ -1,0 +1,94 @@
+/* Basit temiz tasarım */
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --txt:#e5e7eb;
+  --muted:#9ca3af;
+  --acc:#3b82f6;
+  --acc-2:#22d3ee;
+  --danger:#ef4444;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color:var(--txt);
+  background: radial-gradient(circle at 20% -10%, rgba(34,211,238,.15), transparent 30%),
+              radial-gradient(circle at 70% 10%, rgba(59,130,246,.15), transparent 35%),
+              var(--bg);
+}
+.kap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+.kart{
+  width:100%;
+  max-width:440px;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+}
+.baslik{
+  margin:0 0 6px 0;
+  font-size:28px;
+}
+.aciklama{color:var(--muted); margin-top:0}
+.sekme{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:8px;
+  background:rgba(255,255,255,.04);
+  padding:6px;
+  border-radius:12px;
+  margin:18px 0 10px;
+}
+.sekme-dugme{
+  appearance:none; border:0; border-radius:10px;
+  padding:10px 14px; color:var(--txt);
+  background:transparent; cursor:pointer; font-weight:600;
+}
+.sekme-dugme.aktif{ background: linear-gradient(90deg, var(--acc), var(--acc-2)); }
+.icerik{ display:none; }
+.icerik.aktif{ display:block; }
+
+.form{ display:grid; gap:12px; margin:14px 0 8px; }
+label{ display:grid; gap:6px; font-size:14px; color:var(--muted); }
+input{
+  padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.12);
+  background:#0b1220; color:var(--txt); outline:none;
+}
+input:focus{ border-color: var(--acc); box-shadow: 0 0 0 4px rgba(59,130,246,.15); }
+
+.btn{
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color:#0a0f1c; font-weight:800; padding:12px 14px; border:0; border-radius:10px; cursor:pointer;
+}
+.btn.mini{ padding:8px 12px; border-radius:8px; }
+
+.mini{ color:var(--muted); font-size:12px; }
+
+#toast{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 220px;
+  background: #0b1220;
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--txt);
+  padding:12px 14px; border-radius:12px; display:none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Dashboard */
+.ust{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 20px; background:rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.08);
+}
+.logo{ font-weight:800; }
+.icerik-alani{ padding: 24px; max-width: 900px; margin: 0 auto; }
